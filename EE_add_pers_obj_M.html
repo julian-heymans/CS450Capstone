@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+
+<head>
+   <title>EagleEYE: Home Page</title>
+   <link rel="stylesheet" href="EE_home_page_style.css" >
+   <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+
+
+
+        <script type="text/javascript">
+       window.history.forward();
+       function noBack() { window.history.forward(); }
+       </script>
+</head>
+
+
+<div class="row">
+     <img src="Eagle Eye.jpg" alt="logo" id="logo">
+
+       <h1 id="home_page_title"> Add Objective </h1>
+
+       <button type="submit" id="back" name="back" onclick="backToHome()">Back To Home Page</button>
+        </div>
+
+
+
+   <div class="row">
+     <input type="text" style=" text-decoration: none;" id="obj_title" placeholder="Title"></input>
+     </div>
+
+     <div class="row">
+       <textarea  id="obj_content" ></textarea>
+       </div>
+
+   <div class="row">
+      <button onclick="submit_addition()"> Add</button>
+ </div>
+      <div class="row">
+         <p id="add_confirm"></p>
+      </div>
+
+
+      <script>
+
+      function submit_addition(){
+        var username = localStorage.getItem("0");
+        var bus = localStorage.getItem("2");
+        var btn = localStorage.getItem("btn_group");
+       var title  =  document.getElementById("obj_title").value;
+       var depart = "";
+       var content = document.getElementById("obj_content").value;
+
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+           document.getElementById("add_confirm").innerHTML = this.responseText;
+               }
+             };
+           xhttp.open("GET", "EE_add_obj_to_db.php?username=" + username + "&bus=" + bus + "&title=" + title  + "&btn=" + btn + "&depart=" + depart + "&content=" + content,  true);
+            xhttp.send();
+      }
+
+      function backToHome(){
+
+        var username = localStorage.getItem("0");
+        var psw = localStorage.getItem("1");
+        var bus = localStorage.getItem("2");
+
+
+
+
+              window.location.assign("http://localhost:8888/EE_home_page_background.html");
+
+
+    }
+      </script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+   <title>EagleEYE: Error Page</title>
+  </head>
+
+  <link rel="stylesheet" href="EE_login_error_page_style.css">
+  <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+
+  <body>
+
+
+
+  <div>
+  <h1>Error</h1>
+  </div>
+
+      <p style="text-align:center;" id="error_type"></p>
+  <div>
+     <form action="EE_Back_To_Login.php"  method="post" id="back_to_login">
+         <button type="submit" name="back_to_login" >Back to Login Page</button>
+     </form>
+  </div>
+
+  <script>
+
+       var url = window.location.href;
+       var error_type = url.substring(url.lastIndexOf('=') + 1);
+
+       var arr = error_type.split("%20");
+
+      var error_message = "";
+
+       for(var i = 0; i < arr.length; i++){
+           error_message = error_message + arr[i] + " ";
+       }
+
+       document.getElementById("error_type").innerHTML = error_message;
+  </script>
+
+    </body>
+
+
+</html>

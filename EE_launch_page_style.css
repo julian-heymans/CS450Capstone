@@ -1,0 +1,284 @@
+body{
+   background-color: lightsteelblue;
+}
+button{
+  background-color: #7FDFC3;
+
+}
+
+hr{
+
+  border: 5px solid #7FDFC3;
+  outline: 2px solid black;
+  position: absolute;
+  width:98%;
+  top:60%;
+}
+
+#logo_left{
+   width: 325px;
+   height: 250px;
+
+   position: absolute;
+   left: 100px;
+   border: 3px solid #73AD21;
+   padding: 0px;
+   border: 2px solid black;
+
+}
+#logo_right{
+   width: 325px;
+   height: 250px;
+
+   position: absolute;
+   right: 100px;
+   border: 3px solid #73AD21;
+   padding: 0px;
+   border: 2px solid black;
+
+}
+
+
+h1{
+
+   text-shadow: 2px 2px 0px black;
+
+   font-family: 'Audiowide';
+
+
+    padding-left: 0px;
+    padding-right:0px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+    color: #7FDFC3;
+}
+
+#username{
+  position: absolute;
+  width:10%;
+  right: 45%;
+  top:40%;
+  margin: 0;
+  padding: 0px;
+}
+#psw{
+  position: absolute;
+  width:10%;
+  right: 45%;
+  top:45%;
+  margin: 0;
+  padding: 0px;
+}
+#bus{
+  position: absolute;
+  width:10%;
+  right: 45%;
+  top:50%;
+  margin: 0;
+  padding: 0px;
+}
+
+#logInButton{
+  position: absolute;
+  right: 45%;
+  width:10%;
+  top:55%;
+  margin: 0;
+  padding: 0px;
+}
+
+#sign_up{
+  position: absolute;
+  right: 45%;
+  width:10%;
+  top:65%;
+  margin: 0;
+  padding: 0px;
+}
+
+#helpButton{
+  position: absolute;
+  right: 45%;
+  width:10%;
+  top:68%;
+  margin: 0;
+  padding: 0px;
+}
+
+p{
+ font-family: OCR A Std, monospace;
+
+  text-align: center;
+  color: black;
+}
+
+#logo{
+width: 182px;
+height: 135px;
+top:1%;
+position: absolute;
+left: 10px;
+border: 3px solid #73AD21;
+padding: 0px;
+border: 2px solid black;
+margin:0;
+}
+
+body{
+  background-color: lightsteelblue;
+}
+
+.edit_btns {
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.button {
+  background-color: #7FDFC3; /* Green */
+  border: none;
+  color: white;
+  padding: 15%;
+  width: 95%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px ;
+  transition-duration: 0.4s;
+  cursor: pointer;
+   border-style: solid;
+}
+
+
+button{
+  background-color: #7FDFC3;
+
+}
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+ ul{
+   list-style-type: none;
+ padding: 0;
+   border-style: solid;
+    width:30%;
+    height: 460px;
+
+   overflow:hidden; overflow-y:scroll;
+    }
+
+#EmpName{
+  top:8%;
+  right:5%;
+  margin:0;
+  position:absolute;
+  font-weight: bold;
+}
+
+#BusName{
+  top:11%;
+  right:5%;
+  margin:0;
+  position:absolute;
+
+
+
+}
+
+.list1{
+  float:left;
+}
+
+.list2{
+  margin-left: 4%;
+     float:left;
+}
+.list3{
+
+float:right;
+
+}
+
+.title1{
+  text-shadow: 2px 2px 0px black;
+  color: #7FDFC3;
+  font-family: 'Audiowide';
+  float:left;
+}
+
+.title2{
+  text-shadow: 2px 2px 0px black;
+  color: #7FDFC3;
+  font-family: 'Audiowide';
+  margin-left: 21%;
+     float:left;
+}
+.title3{
+  text-shadow: 2px 2px 0px black;
+  color: #7FDFC3;
+  font-family: 'Audiowide';
+  float:right;
+  margin-right: 14%;
+
+
+}
+
+#obj_title{
+
+  text-decoration: underline;
+}
+
+#obj_content{
+
+  border-style: solid;
+}
+
+.btn_grp_1{
+  float:left;
+}
+
+.btn_grp_2{
+  margin-left: 23%;
+     float:left;
+
+}
+.btn_grp_3{
+  margin-right: 19%;
+float:right;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h1{
+   text-shadow: 2px 2px 0px black;
+   font-family: 'Audiowide';
+    padding: 0;
+    margin-top: 3%;
+    margin-bottom:8%;
+    text-align: center;
+    color: #7FDFC3;
+}
+#sign_out{
+  position: absolute;
+  right: 1%;
+  top:3%;
+  margin: 0;
+  padding: 0px;
+
+}
+
+#back{
+  position: absolute;
+  right: 1%;
+  top:4%;
+  margin: 0;
+  padding: 0px;
+
+}

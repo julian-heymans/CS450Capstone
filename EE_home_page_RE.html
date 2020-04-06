@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<head>
+   <title>EagleEYE: Home Page</title>
+   <link rel="stylesheet" href="EE_home_page_style.css" >
+   <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+
+
+
+        <script type="text/javascript">
+       window.history.forward();
+       function noBack() { window.history.forward(); }
+       </script>
+</head>
+
+
+
+  <body onload="onLoad();" onpageshow="if (event.persisted) noBack();" onunload="" id="page_content">
+
+    <div class="row">
+        <img src="Eagle Eye.jpg" alt="logo" id="logo">
+
+          <h1 id="home_page_title"> Home Page </h1>
+
+          <p id="EmpName"></p>
+          <p id="BusName"></p>
+
+
+         <form action="EE_Back_To_Login.php"  method="post" id="sign_out">
+             <button type="submit" name="sign_out" >Sign Out</button>
+         </form>
+              </div>
+
+              <div class="row">
+
+                 <h3 class="title1">Main Objectives </h3>
+                 <h3 class="title2">Department Objectives </h3>
+                 <h3 class="title3">Personal Objectives </h3>
+
+
+           </div>
+
+
+               <div class="row">
+
+               <div class=btn_grp_1>
+                 <button class="edit_btns" name="MainObjectives" id="main_add_btn" onclick="add();" disabled> Add </button>
+                 <button class="edit_btns" name="MainObjectives" id="main_delete_btn" onclick="d();" disabled> Delete </button>
+
+              </div>
+
+                <div class=btn_grp_2>
+                  <button class="edit_btns" name="DepartObjectives" id="depart_add_btn" onclick="add();" disabled> Add </button>
+                  <button class="edit_btns" name="DepartObjectives" id="depart_delete_btn" onclick="d_depart();" disabled> Delete </button>
+
+
+                  <select method="post" id="department" name = "department" class="edit_btns" onchange="loadList2();">
+                        <option value = "Production" selected>Production</option>
+                        <option value = "R&D">R&D</option>
+                        <option value = "Marketing">Marketing</option>
+                        <option value = "Human Resources">Human Resources</option>
+                        <option value = "Accounting/Finance">Accounting/Finance</option>
+                        <option value = "IT">IT</option>
+                     </select>
+               </div>
+
+               <div class=btn_grp_3>
+                 <button class="edit_btns" name="PersonalObjectives" id="pers_add_btn" onclick="add_pers_P();"> Add </button>
+                 <button class="edit_btns" name="PersonalObjectives" id="pers_delete_btn" onclick="d_pers_P();"> Delete </button>
+              </div>
+
+               </div>
+
+
+               <div class="row">
+
+
+                 <ul class="list1" id="list1">
+
+
+                    </ul>
+
+
+
+                 <ul class="list2" id="list2">
+
+
+
+                    </ul>
+
+
+                 <ul class="list3" id="list3">
+
+
+                    </ul>
+
+
+                </div>
+
+                <script>
+
+
+
+                var username = localStorage.getItem("0");
+                var psw = localStorage.getItem("1");
+                var bus = localStorage.getItem("2");
+
+                  //load user's name
+                        var xhttp = new XMLHttpRequest();
+                       xhttp.onreadystatechange = function() {
+                      if (this.readyState == 4 && this.status == 200) {
+                           document.getElementById("EmpName").innerHTML = this.responseText;
+                          }
+                        };
+                      xhttp.open("GET", "EE_getEmpName.php?username=" + username + "&bus=" + bus, true);
+                      xhttp.send();
+
+                     //load the bus name
+                       document.getElementById("BusName").innerHTML = bus;
+
+                		 //load list 1
+                							 var xhttp = new XMLHttpRequest();
+                							 xhttp.onreadystatechange = function() {
+                								if (this.readyState == 4 && this.status == 200) {
+                										document.getElementById("list1").innerHTML = this.responseText;
+                											}
+                										};
+                									xhttp.open("GET", "EE_loadList_1.php?username=" + username + "&bus=" + bus, true);
+                									 xhttp.send();
+
+                				 //load list 2
+                         var depart = document.getElementById("department").value;
+                         //load list 2
+                            var xhttp = new XMLHttpRequest();
+                            xhttp.onreadystatechange = function() {
+                            if (this.readyState == 4 && this.status == 200) {
+                                document.getElementById("list2").innerHTML = this.responseText;
+                                    }
+                                      };
+                              xhttp.open("GET", "EE_loadList_2.php?username=" + username + "&bus=" + bus + "&department=" + depart, true);
+                             xhttp.send();
+
+
+
+                				//load list 3
+                													var xhttp = new XMLHttpRequest();
+                													xhttp.onreadystatechange = function() {
+                													 if (this.readyState == 4 && this.status == 200) {
+                															 document.getElementById("list3").innerHTML = this.responseText;
+                																 }
+                															 };
+                														 xhttp.open("GET", "EE_loadList_3.php?username=" + username + "&bus=" + bus, true);
+                															xhttp.send();
+
+
+
+
+
+                                              function	loadList2(){
+                                                var username = localStorage.getItem("0");
+                                                var psw = localStorage.getItem("1");
+                                                var bus = localStorage.getItem("2");
+
+                                                  //load user's name
+                                                        var xhttp = new XMLHttpRequest();
+                                                       xhttp.onreadystatechange = function() {
+                                                      if (this.readyState == 4 && this.status == 200) {
+                                                           document.getElementById("EmpName").innerHTML = this.responseText;
+                                                          }
+                                                        };
+                                                      xhttp.open("GET", "EE_getEmpName.php?username=" + username + "&bus=" + bus, true);
+                                                      xhttp.send();
+
+                                                     //load the bus name
+                                                       document.getElementById("BusName").innerHTML = bus;
+
+                                                		 //load list 1
+                                                							 var xhttp = new XMLHttpRequest();
+                                                							 xhttp.onreadystatechange = function() {
+                                                								if (this.readyState == 4 && this.status == 200) {
+                                                										document.getElementById("list1").innerHTML = this.responseText;
+                                                											}
+                                                										};
+                                                									xhttp.open("GET", "EE_loadList_1.php?username=" + username + "&bus=" + bus, true);
+                                                									 xhttp.send();
+
+                                                				 //load list 2
+                                                         var depart = document.getElementById("department").value;
+                                                         //load list 2
+                                                            var xhttp = new XMLHttpRequest();
+                                                            xhttp.onreadystatechange = function() {
+                                                            if (this.readyState == 4 && this.status == 200) {
+                                                                document.getElementById("list2").innerHTML = this.responseText;
+                                                                    }
+                                                                      };
+                                                              xhttp.open("GET", "EE_loadList_2.php?username=" + username + "&bus=" + bus + "&department=" + depart, true);
+                                                             xhttp.send();
+
+
+
+                                                				//load list 3
+                                                													var xhttp = new XMLHttpRequest();
+                                                													xhttp.onreadystatechange = function() {
+                                                													 if (this.readyState == 4 && this.status == 200) {
+                                                															 document.getElementById("list3").innerHTML = this.responseText;
+                                                																 }
+                                                															 };
+                                                														 xhttp.open("GET", "EE_loadList_3.php?username=" + username + "&bus=" + bus, true);
+                                                															xhttp.send();
+                                  							}
+
+
+
+                                                     function d_pers_P(){
+
+
+                                                        var id = event.srcElement.id;
+                                                        var btn_group = event.srcElement.name;
+                                                        localStorage.setItem("btn_group", btn_group);
+
+                                                      window.location.assign("http://localhost:8888/EE_delete_pers_obj_P.html");
+
+
+                                                          }
+
+                                                          function add_pers_P(){
+
+
+                                                             var id = event.srcElement.id;
+                                                             var btn_group = event.srcElement.name;
+                                                             localStorage.setItem("btn_group", btn_group);
+
+                                                           window.location.assign("http://localhost:8888/EE_add_pers_obj_P.html");
+
+
+                                                               }
+
+                </script>
+
+  </body>
+
+</html>
